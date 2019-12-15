@@ -1,0 +1,33 @@
+<span style="font-size:24px; font-weight:bold">
+{{mail.title}}<br>
+</span>
+<br>
+<br>
+<a href="{% url 'dj:approval_download' %}">
+            <button type = "button" class="btn btn-info">DOCX DOWNLOAD</button>
+</a>
+<br>
+
+description = {{ mail.description}}<br>
+<br>
+
+<br>
+<br>
+<a href="{% url 'dj:approve' mail.id%}">
+    <button type="button" > APPROVE</button>
+</a>
+<br>
+<br>
+<a href="{% url 'dj:deny' mail.id%}">
+    <button type="button" > DENY </button>
+</a>
+<br>
+<br>
+<a href="{% url 'dj:chat'%}">
+    <button type="button"> CHAT</button>
+</a>
+
+<br>
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

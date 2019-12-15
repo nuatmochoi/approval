@@ -1,0 +1,10 @@
+{% if tag_list %}
+<ul>
+    {% for person in person_list %}
+        <!--
+        <li> <a href=" /dj/person-test/{{person.id}}">{{person.name}}</a></li>
+        -->
+    <li><a href="{% url 'dj:person-test-id' person.id %}">{{person.name}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,15 @@
+<span style="font-size:24px; font-weight:bold">
+APPROVED DOCUMENT LIST<br>
+</span>
+{% if approved_document %}
+<ul>
+    {% for a_doc in approved_document %}
+    <li><a href="{% url 'dj:approve_detail' a_doc.id %}">{{a_doc.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<br>
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

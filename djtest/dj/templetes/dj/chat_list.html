@@ -1,0 +1,14 @@
+<span style="font-size:24px; font-weight:bold">
+CHAT RECORD LIST<br>
+</span>
+{% if chat_strings %}
+<ul>
+    {% for c_doc in chat_strings %}
+    <li><a href="{% url 'dj:chat_detail' c_doc.id %}">{{c_doc.room_name}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+<br>
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

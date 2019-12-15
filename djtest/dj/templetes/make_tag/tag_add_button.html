@@ -1,0 +1,19 @@
+<span style="font-size:24px; font-weight:bold">
+Input Tag Information for Customizing!<br>
+</span>
+
+<div class="container">
+    <form method="post" enctype="multipart/form-data" action="{% url 'dj:tag_add_button' %}" novalidate>
+        {% csrf_token %}
+        <br>
+        {{ form.as_p}}
+        <br>
+
+        <a href="{% url 'dj:tag_button' %}">
+             <input type="submit" value="submit" name="submit">
+        </a>
+    </form>
+</div>
+
+
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

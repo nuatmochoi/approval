@@ -1,0 +1,14 @@
+{{a_doc.title}}
+<br>
+<br>
+description={{ a_doc.description }}
+<br>
+<br>
+document=<a href="{% url 'dj:approval_download' %}">
+            <button type = "button" class="btn btn-info">APPROVED DOWNLOAD</button>
+</a>
+
+<br>
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

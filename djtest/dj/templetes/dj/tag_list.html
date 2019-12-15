@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<span style="font-size:24px; font-weight:bold">
+INPUT TAGS!<br>
+</span>
+
+<div class="container">
+    <form method="post" action="{% url 'dj:tag_list' %}" novalidate>
+        {% csrf_token %}
+        <!--
+        Tag_A:
+        <input name="tag1" type="text">
+        <br>
+        Tag_B:
+        <input name="tag2" type="text">
+        <br>
+        Tag_C:
+        <input name="tag3" type="text">
+        <br>
+        Tag_D:
+        <input name="tag4" type="text">
+        -->
+        {{ form|linebreaks }}
+        {{ form2|linebreaks }}
+        <br>
+
+        <a href="{% url 'dj:upload_doc' %}">
+             <input type="submit" value="submit" name="submit">
+        </a>
+    </form>
+</div>
+
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+</body>
+</html>

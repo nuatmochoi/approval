@@ -1,0 +1,16 @@
+<span style="font-size:24px; font-weight:bold">
+DENIED DOCUMENT LIST<br>
+</span>
+
+{% if denied_document %}
+<ul>
+    {% for d_doc in denied_document %}
+    <li><a href="{% url 'dj:deny_detail' d_doc.id %}">{{d_doc.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<br>
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>

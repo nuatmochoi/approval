@@ -1,0 +1,18 @@
+<span style="font-size:24px; font-weight:bold">
+EMAIL LIST<br>
+</span>
+
+{% if mail_li %}
+<ul>
+    {% for mail in mail_li %}
+        <!--
+        <li> <a href=" /dj/person-test/{{person.id}}">{{person.name}}</a></li>
+        -->
+    <li><a href="{% url 'dj:mail_detail' mail.id %}">{{mail.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<br>
+<br>
+<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
