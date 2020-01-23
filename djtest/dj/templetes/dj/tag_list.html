@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<body>
-<span style="font-size:24px; font-weight:bold">
-INPUT TAGS!<br>
-</span>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <span style="font-size:24px; font-weight:bold"> INPUT TAGS!<br /> </span>
 
-<div class="container">
-    <form method="post" action="{% url 'dj:tag_list' %}" novalidate>
+    <div class="container">
+      <form method="post" action="{% url 'dj:tag_list' %}" novalidate>
         {% csrf_token %}
         <!--
         Tag_A:
@@ -21,18 +23,17 @@ INPUT TAGS!<br>
         Tag_D:
         <input name="tag4" type="text">
         -->
-        {{ form|linebreaks }}
-        {{ form2|linebreaks }}
-        <br>
+        {{ form|linebreaks }} {{ form2|linebreaks }}
+        <br />
 
         <a href="{% url 'dj:upload_doc' %}">
-             <input type="submit" value="submit" name="submit">
+          <input type="submit" value="submit" name="submit" />
         </a>
-    </form>
-</div>
+      </form>
+    </div>
 
-<br>
-<br>
-<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
-</body>
+    <br />
+    <br />
+    <p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+  </body>
 </html>

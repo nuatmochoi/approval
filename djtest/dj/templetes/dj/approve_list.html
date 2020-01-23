@@ -1,15 +1,29 @@
-<span style="font-size:24px; font-weight:bold">
-APPROVED DOCUMENT LIST<br>
-</span>
-{% if approved_document %}
-<ul>
-    {% for a_doc in approved_document %}
-    <li><a href="{% url 'dj:approve_detail' a_doc.id %}">{{a_doc.title}}</a></li>
-    {% endfor %}
-</ul>
-{% endif %}
-
-<br>
-<br>
-<br>
-<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <span style="font-size:24px; font-weight:bold">
+      APPROVED DOCUMENT LIST<br />
+    </span>
+    {% if approved_document %}
+    <ul>
+      {% for a_doc in approved_document %}
+      <li>
+        <a href="{% url 'dj:approve_detail' a_doc.id %}">{{a_doc.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <br />
+    <br />
+    <br />
+    <p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+    {% endif %}
+  </body>
+</html>

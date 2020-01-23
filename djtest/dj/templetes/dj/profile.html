@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Profile</title>
-</head>
-<body>
-{{ data.is_authenticated }}
-<ul>
-    {% for key,value in data.items %}
-        {{ key }} : {{ value }}<br>
-    {% endfor %}
-</ul>
-</body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    {{ data.is_authenticated }}
+    <ul>
+      {% for key,value in data.items %} {{ key }} : {{ value }}<br />
+      {% endfor %}
+    </ul>
+  </body>
 </html>

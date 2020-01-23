@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Download</title>
-</head>
-<body>
-    <a href ="{%  url 'dj:upload_doc' %}"></a>
-</body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <a href="{%  url 'dj:upload_doc' %}"></a>
+  </body>
 </html>

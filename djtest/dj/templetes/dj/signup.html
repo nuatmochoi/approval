@@ -1,22 +1,32 @@
-
-<div class="container">
-    <h1> sign up!</h1>
-    <form method="POST" action="{%url 'signup' %}">
-        {%  csrf_token %}
-        Username:
-        <br>
-        <input name="username"type="text">
-        <br>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>sign up!</h1>
+      <form method="POST" action="{%url 'signup' %}">
+        {% csrf_token %} Username:
+        <br />
+        <input name="username" type="text" />
+        <br />
         Password:
-        <br>
-        <input name="password1" type="password">
-        <br>
+        <br />
+        <input name="password1" type="password" />
+        <br />
         Confirm Password:
-        <br>
-        <input name="password2" type="password">
-        <br><br>
-        <input type = "submit" class="btn btn-primary" value="sign up">
-
-    </form>
-</div>
-<p><a href="{% url 'dj:login' %}">Return to Login</a></p>
+        <br />
+        <input name="password2" type="password" />
+        <br /><br />
+        <input type="submit" class="btn btn-primary" value="sign up" />
+      </form>
+    </div>
+    <p><a href="{% url 'dj:login' %}">Return to Login</a></p>
+  </body>
+</html>

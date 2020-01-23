@@ -1,18 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
-<body>
-  {% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    {% block content %}
     <a href="{% url 'dj:download_doc' %}">
-              <button type = "button" class="btn btn-info">DOCX DOWNLOAD</button>
+      <button type="button" class="btn btn-info">DOCX DOWNLOAD</button>
     </a>
 
     <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
+      {% csrf_token %} {{ form.as_p }}
       <button type="submit">Upload</button>
     </form>
 
     <p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
-  {% endblock %}
-</body>
+    {% endblock %}
+  </body>
 </html>

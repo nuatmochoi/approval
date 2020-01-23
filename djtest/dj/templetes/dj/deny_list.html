@@ -1,16 +1,29 @@
-<span style="font-size:24px; font-weight:bold">
-DENIED DOCUMENT LIST<br>
-</span>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <span style="font-size:24px; font-weight:bold">
+      DENIED DOCUMENT LIST<br />
+    </span>
 
-{% if denied_document %}
-<ul>
-    {% for d_doc in denied_document %}
-    <li><a href="{% url 'dj:deny_detail' d_doc.id %}">{{d_doc.title}}</a></li>
-    {% endfor %}
-</ul>
-{% endif %}
+    {% if denied_document %}
+    <ul>
+      {% for d_doc in denied_document %}
+      <li><a href="{% url 'dj:deny_detail' d_doc.id %}">{{d_doc.title}}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-<br>
-<br>
-<br>
-<p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+    <br />
+    <br />
+    <br />
+    <p><a href="{% url 'dj:tag_button' %}">Return to home</a></p>
+  </body>
+</html>
